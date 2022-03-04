@@ -1,0 +1,18 @@
+import random
+
+def play():
+    user = input("Rock, Paper or Scissors? 'r' for rock, 'p' for paper, 's' for scissors\n")
+    computer = random.choice(['r', 'p', 's'])
+    
+    if user == computer:
+        print("It's a DRAW!!")
+
+    if is_win(user, computer):
+        return 'You WIN!'
+    return 'You LOST!'
+
+def is_win(user, computer):
+    if (user == 'r' and computer == 's') or (user == 'p' and computer == 'r') or (user == 's' and computer == 'p'):
+        return True
+
+print(play())
